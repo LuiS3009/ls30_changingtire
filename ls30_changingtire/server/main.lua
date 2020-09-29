@@ -18,5 +18,7 @@ AddEventHandler('ls30_changingtire:remover', function()
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
 	xPlayer.removeInventoryItem('pneu', 1)
+	Citizen.Wait(30000)
+	xPlayer.addInventoryItem('pneuestragado', 1)
 	TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = 'Usas-te um pneu suplente'})
 end)
