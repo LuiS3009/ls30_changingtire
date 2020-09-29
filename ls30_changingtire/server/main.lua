@@ -8,7 +8,7 @@ ESX.RegisterUsableItem('pneu', function(source)
 	if chavef >= 1 then
 		TriggerClientEvent('ls30_changingtire:usar', _source)
 	else
-		TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'Não tens nenhuma chave de fendas!'})
+		TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'error', text = 'Não tens nenhuma chave de fendas!'})
 	end
 end)
 
