@@ -26,8 +26,8 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
 	PlayerData = xPlayer
 end)
 
-RegisterNetEvent('ls30_ changingtire:usar')
-AddEventHandler('ls30_ changingtire:usar', function()
+RegisterNetEvent('ls30_changingtire:usar')
+AddEventHandler('ls30_changingtire:usar', function()
 	animacao()
 end)
 
@@ -133,7 +133,7 @@ function animacao()
 			TaskStartScenarioInPlace(GetPlayerPed(-1), "CODE_HUMAN_MEDIC_KNEEL", 0, false)
 			ClearPedTasks(GetPlayerPed(-1))
 			DeleteEntity(prop)
-			TriggerServerEvent('ls30_ changingtire:remover')
+			TriggerServerEvent('ls30_changingtire:remover')
 				Citizen.CreateThread(function()
 					CurrentAction = 'pneu'
 					Citizen.Wait(5)
