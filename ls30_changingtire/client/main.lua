@@ -171,7 +171,7 @@ function animacao()
 							exports['mythic_notify']:SendAlert('inform',"A apertar parafusos...")
 							Citizen.Wait(5500)
 							exports['mythic_notify']:SendAlert('inform',"A verificar se está tudo OK...")
-							Citizen.Wait(100)
+							Citizen.Wait(2000)
 							exports["mythic_notify"]:SendAlert('success', "Trocas-te o pneu")
 						end
 					end
