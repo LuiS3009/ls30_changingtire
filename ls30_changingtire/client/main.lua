@@ -130,7 +130,6 @@ function animacao()
 		
 		if DoesEntityExist(vehicle) then
 			substituirpneu = false
-			TaskStartScenarioInPlace(GetPlayerPed(-1), "CODE_HUMAN_MEDIC_KNEEL", 0, false)
 			ClearPedTasks(GetPlayerPed(-1))
 			DeleteEntity(prop)
 			TriggerServerEvent('ls30_changingtire:remover')
@@ -142,6 +141,7 @@ function animacao()
 						if closestTire ~= nil then
 							SetVehicleTyreFixed(vehicle, closestTire.tireIndex)
 							ClearPedTasksImmediately(GetPlayerPed(-1))
+							TaskStartScenarioInPlace(PlayerPedId(), "CODE_HUMAN_MEDIC_KNEEL", 0, true)
 							TriggerEvent('mythic_progbar:client:progress', {
 								name = '',
 								duration = 30000,
@@ -154,12 +154,7 @@ function animacao()
 									disableMouse =  false,
 									disableCombat = true,
 								},
-								animation = {
-									animDict = "anim@heists@box_carry@",
-									anim = "idle",
-									flags = 49,
-								},
-								prop = {"prop_rub_tyre_01"}
+								prop = {'prop_rub_tyre_01'}
 							})
 							Citizen.Wait(2500)
 							exports['mythic_notify']:SendAlert('inform',"A tirar os parafusos...")
@@ -171,7 +166,7 @@ function animacao()
 							exports['mythic_notify']:SendAlert('inform',"A apertar parafusos...")
 							Citizen.Wait(5500)
 							exports['mythic_notify']:SendAlert('inform',"A verificar se está tudo OK...")
-							Citizen.Wait(2000)
+							Citizen.Wait(5500)
 							exports["mythic_notify"]:SendAlert('success', "Trocas-te o pneu")
 						end
 					end
