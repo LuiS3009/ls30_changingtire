@@ -78,7 +78,7 @@ end)
 
 RegisterNetEvent("ls30_changingtire:SlashClientTire")
 AddEventHandler("ls30_changingtire:SlashClientTire", function(tireIndex)
-	TriggerEvent("chatMessage", "^1Um jogador está tentando cortar seu pneu")
+	TriggerEvent("chatMessage", "^1Alguem está a tentar furar o teu pneu")
 	local player = PlayerId()
 	local plyPed = GetPlayerPed(player)
 	local vehicle = GetVehiclePedIsIn(plyPed, false)
