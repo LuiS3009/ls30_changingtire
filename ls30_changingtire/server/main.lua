@@ -22,3 +22,8 @@ AddEventHandler('ls30_changingtire:remover', function()
 	xPlayer.addInventoryItem('pneuestragado', 1)
 	TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = 'Usas-te um pneu suplente'})
 end)
+
+RegisterServerEvent("ls30_changingtire:TargetClient")
+AddEventHandler("ls30_changingtire:TargetClient", function(client, tireIndex)
+	TriggerClientEvent("ls30_changingtire:SlashClientTire", client, tireIndex)
+end)
